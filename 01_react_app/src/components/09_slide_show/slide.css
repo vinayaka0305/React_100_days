@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: rgba(128, 128, 128, 0.295);
+}
+.title {
+  text-align: center;
+}
+.slideshow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image {
+    width: 600px;
+    height: 450px;
+    object-fit: contain;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .prev-btn,.next-btn{
+    padding: 10px 20px;
+    background-color: #b91616;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  .next-btn:hover,.prev-btn:hover{
+    background-color: #444;
+  }

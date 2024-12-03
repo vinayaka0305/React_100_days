@@ -1,56 +1,44 @@
-import { useState } from "react";
-import "./shopping.css";
+import React, { useState } from "react";
 
-const ShoppingLIst = () => {
-  const [categories, setCategories] = useState([
+const Example = () => {
+  const [categories, setCatgories] = useState([
     {
-      name: "Fruits",
-      items: ["Apple", "Banana", "Mango"],
+      name: "Friuts",
+      items: ["orange", "kiwi", "dragon"],
     },
     {
       name: "Vegetables",
-      items: ["Carrot", "Tomato", "Broccoli"],
+      items: ["patato", "tamato", "onion"],
     },
     {
       name: "Dairy",
-      items: ["Milk", "Cheese", "Yogurt"],
+      items: ["milk", "buttermiik", "cheese"],
     },
   ]);
-
   const [activeCategory, setActiveCategory] = useState("");
   const [newItem, setNewItem] = useState("");
 
-  const handleSubmit = () => {
-    if (!activeCategory) {
-      alert("please select a category first");
-      return;
-    }
-
-    if (newItem.trim() === "") {
-      alert("empty item are not add");
-      return;
-    }
-
-    setCategories((prevCat) =>
-      prevCat.map((cat) =>
+  const handleAddTask = () => {
+    setCatgories((prevCategory) =>
+      prevCategory.map((cat) =>
         cat.name === activeCategory
           ? { ...cat, items: [...cat.items, newItem] }
           : cat
       )
-    )
-    setNewItem("")
+    );
+    setNewItem("");
   };
 
   return (
     <div id="main">
-      <h1>Shopping List</h1>
+      <h2>Shopping list</h2>
       <div className="categories">
         {categories.map((cat) => (
           <div
+            onClick={() => setActiveCategory(cat.name)}
             className={`category ${
               activeCategory === cat.name ? "active" : ""
             }`}
-            onClick={() => setActiveCategory(cat.name)}
           >
             {cat.name}
           </div>
@@ -64,14 +52,13 @@ const ShoppingLIst = () => {
           ))}
         <div className="add-item-div">
           <input
-            className="input-field"
             type="text"
-            placeholder="add new item"
+            className="input-field"
             value={newItem}
             onChange={(e) => setNewItem(e.target.value)}
           />
-          <button onClick={handleSubmit} className="add-btn">
-            Add
+          <button className="add-btn" onClick={handleAddTask}>
+            add
           </button>
         </div>
       </div>
@@ -79,4 +66,4 @@ const ShoppingLIst = () => {
   );
 };
 
-export default ShoppingLIst;
+export default Example;

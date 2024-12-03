@@ -24,3 +24,38 @@ h1{
 .category.active{
     background-color: #ccc;
 }
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.item{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+}
+.add-item-div{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.add-item-div input{
+    padding: 0.2rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    
+}
+
+.add-btn {
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #eee;
+    color:#333;
+}

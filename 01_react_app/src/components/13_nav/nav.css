@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ul-cnt{
+    display: flex;
+    justify-content:flex-end;
+    padding: 25px 35px;
+    list-style: none;
+    border-bottom: 1px solid;
+}
+.list {
+    margin-right: 15px;
+    cursor: pointer;
+}

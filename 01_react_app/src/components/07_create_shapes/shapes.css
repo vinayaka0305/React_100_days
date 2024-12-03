@@ -1,0 +1,15 @@
+.circle{
+    height: 75px;
+    width:  75px;
+    background-color: rebeccapurple;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+}
+.square{
+    height: 75px;
+    width:  75px;
+    background-color: brown;
+    color: #fff;
+    text-align: center;
+}
