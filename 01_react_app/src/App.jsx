@@ -18,6 +18,9 @@ import ConditionalRender from "./components/12_rendering_list/ConditionalRender"
 import Nav from "./components/13_nav/Nav";
 import Split from "./components/14_splitting_component/Split";
 import Rating from "./components/15_teachers_rating/Rating";
+import TopperList from "./components/16_topper_list/TopperList";
+import Theme from "./components/17_Dark_light/Theme";
+import Boxes from "./components/18_create_box/Boxes";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,7 +42,11 @@ function App() {
       {/* <ConditionalRender/> */}
       {/* <Nav firstLink="Home" secondLink="profile" thirdLink="About Us" /> */}
       {/* <Split/> */}
-      <Rating/>
+      {/* <Rating/> */}
+      {/* <Example/> */}
+      {/* <TopperList/> */}
+      {/* <Theme/> */}
+      <Boxes/>
     </>
   );
 }

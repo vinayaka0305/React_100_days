@@ -1,67 +1,61 @@
 import React, { useState } from "react";
 
 const Example = () => {
-  const [categories, setCatgories] = useState([
-    {
-      name: "Friuts",
-      items: ["orange", "kiwi", "dragon"],
-    },
-    {
-      name: "Vegetables",
-      items: ["patato", "tamato", "onion"],
-    },
-    {
-      name: "Dairy",
-      items: ["milk", "buttermiik", "cheese"],
-    },
-  ]);
-  const [activeCategory, setActiveCategory] = useState("");
-  const [newItem, setNewItem] = useState("");
 
-  const handleAddTask = () => {
-    setCatgories((prevCategory) =>
-      prevCategory.map((cat) =>
-        cat.name === activeCategory
-          ? { ...cat, items: [...cat.items, newItem] }
-          : cat
-      )
-    );
-    setNewItem("");
-  };
+  const[ratings,setRatings] = useState({
+    "Miss Mary":null,
+    "Vikram":null,
+    "GS":null
+  })
+  const[results,setResults] = useState('');
 
+  const handleChange=(teacher,val)=>{
+    setRatings((prevRating)=>(
+      {...prevRating,[teacher]:parseInt(val)}
+    ))
+  }
+
+  console.log(ratings);
+  const handleSubmit =(e)=>{
+    e.preventDefault();
+    if(Object.values(ratings).some((rating)=>rating === null)){
+      setResults('Give ratings to all teacher')
+      return;
+    }
+    const sortedTeacher = Object.entries(ratings).sort(([,a],[,b])=>b-a);
+    console.log(sortedTeacher);
+    setResults(`the teacher of the year is -${sortedTeacher[0][0]}`)
+  }
   return (
-    <div id="main">
-      <h2>Shopping list</h2>
-      <div className="categories">
-        {categories.map((cat) => (
-          <div
-            onClick={() => setActiveCategory(cat.name)}
-            className={`category ${
-              activeCategory === cat.name ? "active" : ""
-            }`}
-          >
-            {cat.name}
-          </div>
-        ))}
-      </div>
-      <div className="items">
-        {categories
-          .find((cat) => cat.name === activeCategory)
-          ?.items.map((item) => (
-            <div className="item">{item}</div>
-          ))}
-        <div className="add-item-div">
-          <input
-            type="text"
-            className="input-field"
-            value={newItem}
-            onChange={(e) => setNewItem(e.target.value)}
-          />
-          <button className="add-btn" onClick={handleAddTask}>
-            add
-          </button>
-        </div>
-      </div>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2>Teaches Review</h2>
+        <label>names </label>
+        <label> 1</label>
+        <label> 2</label>
+        <label> 3</label>
+        <br />
+        <label id="first">Miss Mary &nbsp;
+            <input type="radio" value="1" name="Miss Mary" onChange={(e)=>handleChange('Miss Mary',e.target.value)}/>
+            <input type="radio" value="2" name="Miss Mary" onChange={(e)=>handleChange('Miss Mary',e.target.value)}/>
+            <input type="radio" value="3" name="Miss Mary" onChange={(e)=>handleChange('Miss Mary',e.target.value)}/>
+        </label>{" "}
+        <br />
+        <label id="seconde">Vikram &nbsp;
+            <input type="radio" value="1" name="Vikram" onChange={(e)=>handleChange('Vikram',e.target.value)}/>
+            <input type="radio" value="2" name="Vikram" onChange={(e)=>handleChange('Vikram',e.target.value)}/>
+            <input type="radio" value="3" name="Vikram" onChange={(e)=>handleChange('Vikram',e.target.value)}/>
+        </label>{" "}
+        <br />
+        <label id="first">GS &nbsp;
+            <input type="radio" value="1" name="GS" onChange={(e)=>handleChange('GS',e.target.value)}/>
+            <input type="radio" value="2" name="GS" onChange={(e)=>handleChange('GS',e.target.value)}/>
+            <input type="radio" value="3" name="GS" onChange={(e)=>handleChange('GS',e.target.value)}/>
+        </label>{" "}
+        <br />
+        <input type="submit" value="submit"/>
+      </form>
+      <div>{results}</div>
     </div>
   );
 };
