@@ -1,61 +1,109 @@
 import React, { useState } from "react";
 
 const Example = () => {
+  const [result, setResult] = useState("");
+  const [ratings, setRatings] = useState({
+    AV: null,
+    KS: null,
+    GS: null,
+  });
 
-  const[ratings,setRatings] = useState({
-    "Miss Mary":null,
-    "Vikram":null,
-    "GS":null
-  })
-  const[results,setResults] = useState('');
+  const handleChagne = (teacher, val) => {
+    setRatings((prevRating) => ({ ...prevRating, [teacher]: parseInt(val) }));
+  };
 
-  const handleChange=(teacher,val)=>{
-    setRatings((prevRating)=>(
-      {...prevRating,[teacher]:parseInt(val)}
-    ))
-  }
-
-  console.log(ratings);
-  const handleSubmit =(e)=>{
+  const handleSubmit = (e)=>{
     e.preventDefault();
     if(Object.values(ratings).some((rating)=>rating === null)){
-      setResults('Give ratings to all teacher')
+      setResult("please give ratings to all")
       return;
     }
     const sortedTeacher = Object.entries(ratings).sort(([,a],[,b])=>b-a);
-    console.log(sortedTeacher);
-    setResults(`the teacher of the year is -${sortedTeacher[0][0]}`)
+    setResult(`The teacher of the year is ${sortedTeacher[0][0]}`)
   }
+
   return (
-    <div>
+    <div id="main">
       <form onSubmit={handleSubmit}>
-        <h2>Teaches Review</h2>
-        <label>names </label>
-        <label> 1</label>
-        <label> 2</label>
-        <label> 3</label>
+        <h2>Teacher review</h2>
+        <label>Names </label>
+        <label>1 </label>
+        <label>2 </label>
+        <label>3</label>
         <br />
-        <label id="first">Miss Mary &nbsp;
-            <input type="radio" value="1" name="Miss Mary" onChange={(e)=>handleChange('Miss Mary',e.target.value)}/>
-            <input type="radio" value="2" name="Miss Mary" onChange={(e)=>handleChange('Miss Mary',e.target.value)}/>
-            <input type="radio" value="3" name="Miss Mary" onChange={(e)=>handleChange('Miss Mary',e.target.value)}/>
-        </label>{" "}
         <br />
-        <label id="seconde">Vikram &nbsp;
-            <input type="radio" value="1" name="Vikram" onChange={(e)=>handleChange('Vikram',e.target.value)}/>
-            <input type="radio" value="2" name="Vikram" onChange={(e)=>handleChange('Vikram',e.target.value)}/>
-            <input type="radio" value="3" name="Vikram" onChange={(e)=>handleChange('Vikram',e.target.value)}/>
-        </label>{" "}
+        <label id="first">
+          AV &nbsp;
+          <input
+            type="radio"
+            value="1"
+            name="AV"
+            onChange={(e) => handleChagne("AV", e.target.value)}
+          />
+          <input
+            type="radio"
+            value="2"
+            name="AV"
+            onChange={(e) => handleChagne("AV", e.target.value)}
+          />
+          <input
+            type="radio"
+            value="3"
+            name="AV"
+            onChange={(e) => handleChagne("AV", e.target.value)}
+          />
+        </label>
         <br />
-        <label id="first">GS &nbsp;
-            <input type="radio" value="1" name="GS" onChange={(e)=>handleChange('GS',e.target.value)}/>
-            <input type="radio" value="2" name="GS" onChange={(e)=>handleChange('GS',e.target.value)}/>
-            <input type="radio" value="3" name="GS" onChange={(e)=>handleChange('GS',e.target.value)}/>
-        </label>{" "}
+        <label id="first">
+          KS &nbsp;
+          <input
+            type="radio"
+            value="1"
+            name="KS"
+            onChange={(e) => handleChagne("KS", e.target.value)}
+          />
+          <input
+            type="radio"
+            value="2"
+            name="KS"
+            onChange={(e) => handleChagne("KS", e.target.value)}
+          />
+          <input
+            type="radio"
+            value="3"
+            name="KS"
+            onChange={(e) => handleChagne("KS", e.target.value)}
+          />
+        </label>
         <br />
-        <input type="submit" value="submit"/>
+        <label id="first">
+          GS &nbsp;
+          <input
+            type="radio"
+            value="1"
+            name="GS"
+            onChange={(e) => handleChagne("GS", e.target.value)}
+          />
+          <input
+            type="radio"
+            value="2"
+            name="GS"
+            onChange={(e) => handleChagne("GS", e.target.value)}
+          />
+          <input
+            type="radio"
+            value="3"
+            name="GS"
+            onChange={(e) => handleChagne("GS", e.target.value)}
+          />
+        </label>
+        <br />
+        <br />
+        <input type="submit" value="Sumit" />
       </form>
-      <div>{results}</div>
+      <div>
+        {result}
+      </div>
     </div>
   );
 };

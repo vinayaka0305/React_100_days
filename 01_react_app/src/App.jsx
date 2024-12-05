@@ -21,6 +21,7 @@ import Rating from "./components/15_teachers_rating/Rating";
 import TopperList from "./components/16_topper_list/TopperList";
 import Theme from "./components/17_Dark_light/Theme";
 import Boxes from "./components/18_create_box/Boxes";
+import ImageResizer from "./components/19_image_sizer/ImageResizer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -46,7 +47,8 @@ function App() {
       {/* <Example/> */}
       {/* <TopperList/> */}
       {/* <Theme/> */}
-      <Boxes/>
+      {/* <Boxes/> */}
+    <ImageResizer/>
     </>
   );
 }
