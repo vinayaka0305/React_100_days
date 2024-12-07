@@ -28,6 +28,7 @@ import Keyboard from "./components/22_keyboard/Keyboard";
 import Trivia from "./components/23_trivia_game/Trivia";
 import Themeprovider from "./ThemeProvider/Themeprovider";
 import Page from "./components/24_context_theme_toggler/Page";
+import RoutersIntro from "./components/25_router/RoutersIntro";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -60,7 +61,8 @@ function App() {
       {/* <Random /> */}
       {/* <Keyboard/> */}
       {/* <Trivia/> */}
-      <Page/>
+      {/* <Page/> */}
+    <RoutersIntro/>
     </Themeprovider>
     </>
   );
