@@ -22,12 +22,19 @@ import TopperList from "./components/16_topper_list/TopperList";
 import Theme from "./components/17_Dark_light/Theme";
 import Boxes from "./components/18_create_box/Boxes";
 import ImageResizer from "./components/19_image_sizer/ImageResizer";
+import Form from "./components/20_form/Form";
+import Random from "./components/21_random_user/Random";
+import Keyboard from "./components/22_keyboard/Keyboard";
+import Trivia from "./components/23_trivia_game/Trivia";
+import Themeprovider from "./ThemeProvider/Themeprovider";
+import Page from "./components/24_context_theme_toggler/Page";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+    <Themeprovider>
       {/* <Hello/> */}
       {/* <Sports/> */}
       {/* <Food/> */}
@@ -48,7 +55,13 @@ function App() {
       {/* <TopperList/> */}
       {/* <Theme/> */}
       {/* <Boxes/> */}
-    <ImageResizer/>
+      {/* <ImageResizer/> */}
+      {/* <Form/> */}
+      {/* <Random /> */}
+      {/* <Keyboard/> */}
+      {/* <Trivia/> */}
+      <Page/>
+    </Themeprovider>
     </>
   );
 }
