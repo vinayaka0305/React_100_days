@@ -29,6 +29,10 @@ import Trivia from "./components/23_trivia_game/Trivia";
 import Themeprovider from "./ThemeProvider/Themeprovider";
 import Page from "./components/24_context_theme_toggler/Page";
 import RoutersIntro from "./components/25_router/RoutersIntro";
+import Timer from "./components/26_class_based/Timer";
+import FnTimer from "./components/26_class_based/FnTimer";
+import CounterClass from "./components/26_class_based/CounterClass";
+import Fav from "./components/27_favorites/Fav";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -62,7 +66,11 @@ function App() {
       {/* <Keyboard/> */}
       {/* <Trivia/> */}
       {/* <Page/> */}
-    <RoutersIntro/>
+    {/* <RoutersIntro/> */}
+    {/* <Timer/> */}
+    {/* <FnTimer/> */}
+    {/* <CounterClass/> */}
+    <Fav/>
     </Themeprovider>
     </>
   );
