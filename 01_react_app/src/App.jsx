@@ -33,6 +33,9 @@ import Timer from "./components/26_class_based/Timer";
 import FnTimer from "./components/26_class_based/FnTimer";
 import CounterClass from "./components/26_class_based/CounterClass";
 import Fav from "./components/27_favorites/Fav";
+import ClassComponent from "./components/26_class_based/ClassComponent";
+import AppHome from "./components/28_login_form/AppHome";
+import Apphome2 from "./components/29_authentication/Apphome2";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -70,7 +73,10 @@ function App() {
     {/* <Timer/> */}
     {/* <FnTimer/> */}
     {/* <CounterClass/> */}
-    <Fav/>
+    {/* <ClassComponent/> */}
+    {/* <Fav/> */}
+    {/* <AppHome/> */}
+    <Apphome2/>
     </Themeprovider>
     </>
   );
