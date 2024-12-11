@@ -36,6 +36,10 @@ import Fav from "./components/27_favorites/Fav";
 import ClassComponent from "./components/26_class_based/ClassComponent";
 import AppHome from "./components/28_login_form/AppHome";
 import Apphome2 from "./components/29_authentication/Apphome2";
+import ShapesHome from "./components/30_shapes/ShapesHome";
+import Forms from "./components/31_marvel_dc/Forms";
+import CoinsTT from "./components/31_Top20_coins/CoinsTT";
+import CoinsHome from "./components/31_Top20_coins/CoinsHome";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -76,7 +80,12 @@ function App() {
     {/* <ClassComponent/> */}
     {/* <Fav/> */}
     {/* <AppHome/> */}
-    <Apphome2/>
+    {/* <Apphome2/> */}
+    {/* <ShapesHome/> */}
+    {/* <Example/> */}
+    {/* <Forms/> */}
+    {/* <CoinsTT/> */}
+    <CoinsHome/>
     </Themeprovider>
     </>
   );
