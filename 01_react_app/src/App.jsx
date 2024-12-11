@@ -40,13 +40,14 @@ import ShapesHome from "./components/30_shapes/ShapesHome";
 import Forms from "./components/31_marvel_dc/Forms";
 import CoinsTT from "./components/31_Top20_coins/CoinsTT";
 import CoinsHome from "./components/31_Top20_coins/CoinsHome";
+import HomeAuth from "./components/33_Auth_Context/HomeAuth";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-    <Themeprovider>
+    {/* <Themeprovider> */}
       {/* <Hello/> */}
       {/* <Sports/> */}
       {/* <Food/> */}
@@ -85,8 +86,9 @@ function App() {
     {/* <Example/> */}
     {/* <Forms/> */}
     {/* <CoinsTT/> */}
-    <CoinsHome/>
-    </Themeprovider>
+    {/* <CoinsHome/> */}
+    <HomeAuth/>
+    {/* </Themeprovider> */}
     </>
   );
 }
