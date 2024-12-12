@@ -41,6 +41,10 @@ import Forms from "./components/31_marvel_dc/Forms";
 import CoinsTT from "./components/31_Top20_coins/CoinsTT";
 import CoinsHome from "./components/31_Top20_coins/CoinsHome";
 import HomeAuth from "./components/33_Auth_Context/HomeAuth";
+import LanguageHome from "./components/34_language/LanguageHome";
+import MealHome from "./components/35_reaming_meals/MealHome";
+import HomeForward from "./components/36_react_forward/HomeForward";
+import ToolipHome from "./components/37_tooltip/ToolipHome";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -87,8 +91,12 @@ function App() {
     {/* <Forms/> */}
     {/* <CoinsTT/> */}
     {/* <CoinsHome/> */}
-    <HomeAuth/>
+    {/* <HomeAuth/> */}
     {/* </Themeprovider> */}
+    {/* <LanguageHome/> */}
+    {/* <MealHome/> */}
+    {/* <HomeForward/> */}
+    <ToolipHome/>
     </>
   );
 }
