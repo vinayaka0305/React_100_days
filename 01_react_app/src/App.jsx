@@ -45,6 +45,9 @@ import LanguageHome from "./components/34_language/LanguageHome";
 import MealHome from "./components/35_reaming_meals/MealHome";
 import HomeForward from "./components/36_react_forward/HomeForward";
 import ToolipHome from "./components/37_tooltip/ToolipHome";
+import StopHome from "./components/38_stop_watch/StopHome";
+import CouterReducer from "./components/39_counter_app/CouterReducer";
+import HotelHome from "./components/40_Hotel_city_useReducer/HotelHome";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -96,7 +99,11 @@ function App() {
     {/* <LanguageHome/> */}
     {/* <MealHome/> */}
     {/* <HomeForward/> */}
-    <ToolipHome/>
+    {/* <ToolipHome/> */}
+    {/* <StopHome/> */}
+    {/* <CouterReducer/> */}
+    {/* <Example/> */}
+    <HotelHome/>
     </>
   );
 }
