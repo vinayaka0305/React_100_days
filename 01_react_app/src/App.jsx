@@ -48,6 +48,13 @@ import ToolipHome from "./components/37_tooltip/ToolipHome";
 import StopHome from "./components/38_stop_watch/StopHome";
 import CouterReducer from "./components/39_counter_app/CouterReducer";
 import HotelHome from "./components/40_Hotel_city_useReducer/HotelHome";
+import UserListHome from "./components/41_users_list/UserListHome";
+import ReducerLoginHome from "./components/42_UseReducer_login/ReducerLoginHome";
+import MegaHome from "./components/43_use_callMegaBoost/MegaHome";
+import NumHome from "./components/44_Num/NumHome";
+import FactorialHome from "./components/45_factorial/FactorialHome";
+import FetchHome from "./components/46_custom_hook/FetchHome";
+import ToggleHome from "./components/46_custom_hook/ToggleHome";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -103,7 +110,15 @@ function App() {
     {/* <StopHome/> */}
     {/* <CouterReducer/> */}
     {/* <Example/> */}
-    <HotelHome/>
+    {/* <HotelHome/> */}
+    {/* <UserListHome/> */}
+    {/* <ReducerLoginHome/> */}
+    {/* <Example/> */}
+    {/* <MegaHome/> */}
+    {/* <NumHome/> */}
+    {/* <FactorialHome/> */}
+    {/* <FetchHome/> */}
+    <ToggleHome/>
     </>
   );
 }
