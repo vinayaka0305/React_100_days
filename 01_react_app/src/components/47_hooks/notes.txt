@@ -1,0 +1,102 @@
+What is the useReducer Hook?
+
+Purpose:
+useReducer is used when you have complex state logic that depends on previous states, or when managing multiple related state updates.
+Components of useReducer:
+
+Initial State: The starting state of your component (e.g., initialState = { count: 0 }).
+Reducer Function: A function that decides how the state changes based on the action provided. It takes two arguments:
+state: The current state.
+action: An object that specifies what kind of change to make (e.g., { type: "ADD" }).
+Dispatch Function: A function returned by useReducer that you use to send an action to the reducer. For example, dispatch({ type: "ADD" }).
+Why use useReducer over useState?
+
+While useState works great for simple states, useReducer is better for managing more complex state transitions and for ensuring your state updates are predictable and organized.
+In this example, the useReducer hook helps handle three types of actions (ADD, DELETE, and ALLCLEAR) in a clear and structured way. This makes the code easier to maintain and scale!
+
+--------------------------------------------------------------------------------------
+
+What is the useRef Hook?
+
+Purpose:
+
+useRef is a React hook used to create a mutable reference that persists across renders. Unlike state, changes to a useRef object don’t trigger a re-render.
+Key Features:
+
+Mutable Object: A useRef object has a .current property where you can store data or a reference to a DOM element.
+
+No Re-renders: Updating .current doesn’t cause the component to re-render.
+
+Persisted Value: Values stored in useRef persist between renders, similar to an instance variable.
+
+Why Use useRef?
+
+To directly interact with a DOM element, like focusing an input field.
+
+To store values that don’t need to trigger a re-render (e.g., keeping track of how many times the component re-rendered).
+
+--------------------------------------------------------------------------------------
+What is useMemo?
+
+Purpose:
+
+useMemo is a React hook that memoizes the result of a computation.
+
+It ensures that the function inside useMemo is only re-executed when its dependencies change.
+
+This is especially useful for expensive or time-consuming calculations that don’t need to be recalculated on every render.
+
+How It Works:
+
+useMemo takes two arguments:
+A function to compute the value.
+A dependency array that specifies when the computation should run again.
+If the dependencies don’t change, React skips the function execution and returns the memoized value.
+
+When to Use:
+
+Use useMemo to optimize performance when you have:
+Expensive calculations that should not run on every render.
+Dependency-sensitive computations that only change with certain state or props.
+
+Why Use useMemo in This Code?
+If expensiveCalculation were called directly, it would run on every render, even when toggling the theme (dark state changes), wasting resources.
+
+With useMemo, the calculation is optimized, running only when num changes, which enhances performance for computationally expensive tasks.
+
+--------------------------------------------------------------------------------------
+
+What is useCallback?
+Purpose:
+
+useCallback is a React hook used to memoize a function.
+It ensures the function is not re-created unless its dependencies change.
+This is useful when passing functions to child components or event handlers, especially if the child component uses React.memo.
+
+Why Use useCallback?
+
+It helps prevent unnecessary re-renders of child components.
+
+Without useCallback, functions are recreated on every render, which can cause child components to re-render even if they use React.memo.
+
+
+Why Use useCallback in This Code?
+
+Without useCallback, the prinNumbers function would be recreated on every render of UseeCallback, even when toggling the theme (dark state changes).
+This would cause PrintNum to re-render unnecessarily, even though its output doesn’t change.
+By memoizing prinNumbers with useCallback, React ensures that PrintNum only re-renders when the num state changes, improving performance.
+======================================================================================
+
+When to Use React.memo?
+React.memo is useful for optimizing components in the following cases:
+
+Pure Components:
+
+Components that render the same output for the same props.
+Preventing Unnecessary Re-Renders:
+
+When a parent component re-renders, all its child components are also re-rendered by default.
+React.memo ensures that child components are only re-rendered if their props actually change.
+Performance Optimization:
+
+Use it when re-rendering a component is expensive (e.g., involves complex calculations or rendering a large UI).

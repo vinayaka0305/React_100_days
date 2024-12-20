@@ -8,7 +8,6 @@ import Toggle from "./components/04_toggle_text/Toggle";
 import Counter from "./components/05_counter_app/Counter";
 import ShoppingLIst from "./components/06_shoppingList/ShoppingLIst";
 import CreateShapes from "./components/07_create_shapes/CreateShapes";
-import Example from "./components/example/Example";
 import Double from "./components/08_double_counter/Double";
 import SlidShow from "./components/09_slide_show/SlidShow";
 import Action from "./components/10_button_action/Action";
@@ -55,6 +54,16 @@ import NumHome from "./components/44_Num/NumHome";
 import FactorialHome from "./components/45_factorial/FactorialHome";
 import FetchHome from "./components/46_custom_hook/FetchHome";
 import ToggleHome from "./components/46_custom_hook/ToggleHome";
+import ExampleHome from "./components/example/ExampleHome";
+import StopWatch1 from "./components/48_stop_watch/StopWatch1";
+import StopWatch2 from "./components/48_stop_watch/StopWatch2";
+import ToDo_Lists from "./components/49_to_do_list/ToDo_Lists";
+import UseeEffect from "./components/47_hooks/UseeEffect";
+import HomeC from "./components/47_hooks/HomeC";
+import UseeReducer from "./components/47_hooks/useeReducer";
+import UseeRef from "./components/47_hooks/UseeRef";
+import UseeMemo from "./components/47_hooks/UseeMemo";
+import UseeCallback from "./components/47_hooks/UseeCallback";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -118,7 +127,17 @@ function App() {
     {/* <NumHome/> */}
     {/* <FactorialHome/> */}
     {/* <FetchHome/> */}
-    <ToggleHome/>
+    {/* <ToggleHome/> */}
+    {/* <ExampleHome/> */}
+    {/* <StopWatch1/> */}
+    {/* <StopWatch2/> */}
+    {/* <ToDo_Lists/> */}
+    {/* <UseeEffect/> */}
+    {/* <HomeC/> */}
+    {/* <UseeReducer/> */}
+    {/* <UseeRef/> */}
+    {/* <UseeMemo/> */}
+    <UseeCallback/>
     </>
   );
 }
