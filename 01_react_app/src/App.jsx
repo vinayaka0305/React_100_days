@@ -64,6 +64,7 @@ import UseeReducer from "./components/47_hooks/useeReducer";
 import UseeRef from "./components/47_hooks/UseeRef";
 import UseeMemo from "./components/47_hooks/UseeMemo";
 import UseeCallback from "./components/47_hooks/UseeCallback";
+import Performance from "./components/50_debounce_throttle/Performance";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -137,7 +138,8 @@ function App() {
     {/* <UseeReducer/> */}
     {/* <UseeRef/> */}
     {/* <UseeMemo/> */}
-    <UseeCallback/>
+    {/* <UseeCallback/> */}
+    <Performance/>
     </>
   );
 }

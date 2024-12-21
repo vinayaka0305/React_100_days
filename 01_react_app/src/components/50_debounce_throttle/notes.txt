@@ -1,0 +1,48 @@
+Explanation:
+
+What are Debouncing and Throttling?
+
+Debouncing:
+
+Debouncing delays the execution of a function until after a specified time period has passed since the last event.
+Example: In a search bar, you wait until the user has stopped typing for a while (e.g., 800ms) before sending an API request.
+Throttling:
+
+Throttling ensures a function is executed at most once within a specified time period, regardless of how often the event occurs.
+Example: Prevent excessive execution of a scroll event handler by ensuring it runs only every 700ms.
+
+How the Code Implements Debounce:
+
+Custom Debounce Function:
+
+The ourDebounce function ensures that the debounceHandler function is called only if the user stops typing for at least 800ms.
+
+If the user types within 800ms, the previous timer is cleared and reset.
+
+
+How the Code Implements Throttle:
+Custom Throttle Function:
+
+The ourThrottle function ensures the thorttleHandler function is executed at most once every 700ms.
+
+If the event happens again during the delay period, it is ignored.
+
+
+Behavior in the UI:
+Debounce:
+
+Typing in the first input field (onChange bound to handleDebounce) will update the state (debounceInput) only after the user has stopped typing for 800ms.
+Throttle:
+
+Typing in the second input field (onChange bound to handleThrottle) will update the state (throttleInput) at most once every 700ms, even if the user types continuously.
+
+Why Use Debounce and Throttle?
+Debounce:
+
+Reduces the frequency of function calls for tasks like search bar input or resize events.
+Saves API requests or computations.
+
+Throttle:
+
+Ensures smooth performance for tasks like scroll listeners, window resizing, or mouse movement.
+Prevents function calls from overwhelming the browser or server.
