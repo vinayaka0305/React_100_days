@@ -139,7 +139,8 @@ function App() {
     {/* <UseeRef/> */}
     {/* <UseeMemo/> */}
     {/* <UseeCallback/> */}
-    <Performance/>
+    {/* <Performance/> */}
+    <ExampleHome/>
     </>
   );
 }
