@@ -14,9 +14,8 @@ const myDebounce = (fn, delay) => {
 };
 
 const Header = () => {
-  const [showSearchPortal, setShowSeachPortal] = useState(false);
-
-  const { searchValue,setSearchValue } = useContext(MusicProvider);
+  const { searchValue, setSearchValue, showSearchPortal, setShowSeachPortal } =
+    useContext(MusicProvider);
   // console.log(searchValue);
 
   const handleDebounce = useCallback(
@@ -26,13 +25,13 @@ const Header = () => {
     [setSearchValue]
   );
 
-  useEffect(()=>{
-    if(searchValue){
-      setShowSeachPortal(true)
-    }else if(searchValue.length === 0){
+  useEffect(() => {
+    if (searchValue) {
+      setShowSeachPortal(true);
+    } else if (searchValue.length === 0) {
       setShowSeachPortal(false);
     }
-  },[searchValue])
+  }, [searchValue]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,10 +67,7 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <form
-            className="d-flex"
-            onSubmit={handleSubmit}
-          >
+          <form className="d-flex" onSubmit={handleSubmit}>
             <input
               className="form-control me-2"
               type="search"
@@ -80,7 +76,7 @@ const Header = () => {
               aria-label="Search"
               onChange={(e) => handleDebounce(e.target.value)}
             />
-            <button className="btn btn-outline-success" type="submit" >
+            <button className="btn btn-outline-success" type="submit">
               Search
             </button>
             {showSearchPortal && <SearchPortal />}
