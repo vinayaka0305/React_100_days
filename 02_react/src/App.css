@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f4f4f2;
+    min-height: 40px;
+}
+
+.nav-container a{
+    text-decoration: none;
+    color: #444;
+    cursor: pointer;
+}
+.nav-container a.active{
+    text-decoration: underline;
+}

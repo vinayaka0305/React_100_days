@@ -1,7 +1,9 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MusicProvider } from "../context/MusicContext";
+import { useNavigate } from "react-router-dom";
 import SearchPortal from "./SearchPortal";
+import { use } from "react";
 
 const myDebounce = (fn, delay) => {
   let timer;
@@ -14,9 +16,17 @@ const myDebounce = (fn, delay) => {
 };
 
 const Header = () => {
-  const { searchValue, setSearchValue, showSearchPortal, setShowSeachPortal } =
-    useContext(MusicProvider);
-  // console.log(searchValue);
+  const {
+    searchValue,
+    setSearchValue,
+    showSearchPortal,
+    setShowSeachPortal,
+    user,
+    setUser,
+  } = useContext(MusicProvider);
+  // console.log(user.username);
+
+  const navigate = useNavigate();
 
   const handleDebounce = useCallback(
     myDebounce((value) => {
@@ -35,6 +45,14 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("name");
+    sessionStorage.setItem("loginStatus", JSON.stringify(false));
+    setUser({username:null,loginStatus:false})
+    navigate("/login");
   };
 
   return (
@@ -82,6 +100,18 @@ const Header = () => {
             {showSearchPortal && <SearchPortal />}
           </form>
         </div>
+        {user.loginStatus ? (
+          <div style={{ marginLeft: "10px" }}>
+            {user.username}{" "}
+            <button className="btn btn-secondary" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div style={{ marginLeft: "10px" }}>
+            <Link to="/login">Login</Link> | <Link to="/signup">SignUp</Link>
+          </div>
+        )}
       </div>
     </nav>
   );
