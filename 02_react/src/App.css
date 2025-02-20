@@ -19,3 +19,96 @@
 .nav-container a.active{
     text-decoration: underline;
 }
+
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+.p-container{
+    display: flex;
+    align-items: center;
+    width:80%;
+    justify-content: center;
+}
+.p1-container{
+    display: flex;
+    width: 800px;
+    margin: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.product-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.pagination-container{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Adjust spacing between buttons */
+    padding: 10px; /* Optional, for better spacing */
+}
+
+.page-number{
+    padding: 6px;
+    margin: 4px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.page-number:hover {
+    background-color: #e0b12b;
+    color: white;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.actives {
+    background-color: #e0b12b; /* Slightly darker golden for active state */
+    color: white;
+    box-shadow: 0px 4px 8px rgba(228, 181, 48, 0.6);
+    transform: scale(1.15); /* Slight pop-out effect */
+}
+
+.page-number:disabled {
+    background-color: #ddd;
+    color: #777;
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.page-number:actives {
+    transform: scale(0.9);
+}
