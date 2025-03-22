@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f4f4f4;
+}
+
+.page-number{
+  padding: 3px;
+}
+
+.activePage{
+  background-color: #e0b12b
+}

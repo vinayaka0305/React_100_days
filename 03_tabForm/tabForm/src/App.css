@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+.heading-container{
+  display: flex;
+}
+
+.heading{
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.t-body{
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+}
+.error{
+  color: red;
+  margin: 2px 2px;
+  font-size: 14px;
+}

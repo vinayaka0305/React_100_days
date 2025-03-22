@@ -5,6 +5,7 @@ import Stopwatch from "./components/Stopwatch";
 import SportsWatch from "./components/SportsWatch";
 import Todolist from "./components/Todolist";
 import Example from "./components/Example";
+import CompleteTheTask from "./components/CompleteTheTask";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
         {/* <SportsWatch/> */}
         {/* <Todolist/> */}
         <Example/>
+        {/* <CompleteTheTask/> */}
       </Context>
     </>
   );
